@@ -694,6 +694,20 @@
         <item>**screenshot**</item>
     </string-array>
 
+    <string-array name="shortcut_action_tile_entries">
+        <item>@string/shortcut_action_power</item>
+        <item>@string/shortcut_action_power_menu</item>
+        <item>@string/shortcut_action_screenshot</item>
+        <item>@string/shortcut_action_recent</item>
+    </string-array>
+
+    <string-array name="shortcut_action_tile_values" translatable="false">
+        <item>**power**</item>
+        <item>**power_menu**</item>
+        <item>**screenshot**</item>
+        <item>**recents**</item>
+    </string-array>
+
     <!-- Heads up -->
     <string-array name="heads_up_snooze_entries">
         <item>@string/disabled</item>
@@ -823,6 +837,24 @@
         <item>100</item>
         <item>200</item>
      </string-array>
+
+    <!--- Navigation bar -->
+    <!--- Navigation bar height -->
+    <string-array name="navigation_bar_height_entries" translatable="false">
+        <item>@string/navigation_bar_height_52</item>
+        <item>@string/navigation_bar_height_48</item>
+        <item>@string/navigation_bar_height_44</item>
+        <item>@string/navigation_bar_height_40</item>
+        <item>@string/navigation_bar_height_36</item>
+    </string-array>
+
+    <string-array name="navigation_bar_height_values" translatable="false">
+        <item>52</item>
+        <item>48</item>
+        <item>44</item>
+        <item>40</item>
+        <item>36</item>
+    </string-array>
 
 </resources>
 
