@@ -145,22 +145,22 @@ public class DozeSettingsFragment extends SettingsPreferenceFragment implements
         }
         if (mDozeTriggerPickup != null) {
             int value = Settings.System.getInt(getContentResolver(),
-                    Settings.System.DOZE_TRIGGER_PICKUP, 1);
+                    Settings.System.DOZE_TRIGGER_PICKUP, 0);
             mDozeTriggerPickup.setChecked(value != 0);
         }
         if (mDozeTriggerSigmotion != null) {
             int value = Settings.System.getInt(getContentResolver(),
-                    Settings.System.DOZE_TRIGGER_SIGMOTION, 1);
+                    Settings.System.DOZE_TRIGGER_SIGMOTION, 0);
             mDozeTriggerSigmotion.setChecked(value != 0);
         }
         if (mDozeTriggerNotification != null) {
             int value = Settings.System.getInt(getContentResolver(),
-                    Settings.System.DOZE_TRIGGER_NOTIFICATION, 1);
+                    Settings.System.DOZE_TRIGGER_NOTIFICATION, 0);
             mDozeTriggerNotification.setChecked(value != 0);
         }
         if (mDozeSchedule != null) {
             int value = Settings.System.getInt(getContentResolver(),
-                    Settings.System.DOZE_SCHEDULE, 1);
+                    Settings.System.DOZE_SCHEDULE, 0);
             mDozeSchedule.setChecked(value != 0);
         }
     }
