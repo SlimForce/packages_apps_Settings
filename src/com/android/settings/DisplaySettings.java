@@ -66,13 +66,6 @@ import com.android.settings.slim.DisplayRotation;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.android.settings.livedisplay.DisplayColor;
-import com.android.settings.livedisplay.DisplayGamma;
-
-import org.cyanogenmod.hardware.AdaptiveBacklight;
-import org.cyanogenmod.hardware.ColorEnhancement;
-import org.cyanogenmod.hardware.SunlightEnhancement;
-
 public class DisplaySettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, OnPreferenceClickListener, Indexable {
     private static final String TAG = "DisplaySettings";
@@ -105,7 +98,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String ROTATION_ANGLE_270 = "270";
 
     private PreferenceScreen mDisplayRotationPreference;
-    private PreferenceScreen mScreenColorSettings;
 
     private FontDialogPreference mFontSizePref;
 
@@ -229,11 +221,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         if (counter == 3) {
             prefSet.removePreference(mWakeUpOptions);
-        }
-
-        mScreenColorSettings = (PreferenceScreen) findPreference(KEY_SCREEN_COLOR_SETTINGS);
-        if (!isPostProcessingSupported()) {
-            getPreferenceScreen().removePreference(mScreenColorSettings);
         }
     }
 

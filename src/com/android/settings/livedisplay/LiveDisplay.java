@@ -20,9 +20,6 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
 import android.database.ContentObserver;
-
-import com.android.internal.util.ArrayUtils;
-
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -36,6 +33,7 @@ import android.preference.SwitchPreference;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 
+import com.android.internal.util.ArrayUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
@@ -58,7 +56,8 @@ public class LiveDisplay extends SettingsPreferenceFragment implements
     private static final String KEY_CATEGORY_CALIBRATION = "calibration";
 
     private static final String KEY_LIVE_DISPLAY = "live_display";
-    private static final String KEY_LIVE_DISPLAY_AUTO_OUTDOOR_MODE = "live_display_auto_outdoor_mode";
+    private static final String KEY_LIVE_DISPLAY_AUTO_OUTDOOR_MODE =
+            "live_display_auto_outdoor_mode";
     private static final String KEY_LIVE_DISPLAY_LOW_POWER = "live_display_low_power";
     private static final String KEY_LIVE_DISPLAY_COLOR_ENHANCE = "live_display_color_enhance";
     private static final String KEY_LIVE_DISPLAY_TEMPERATURE = "live_display_color_temperature";
@@ -216,11 +215,11 @@ public class LiveDisplay extends SettingsPreferenceFragment implements
     }
 
     private void updateTemperatureSummary() {
-        float day = Settings.System.getFloatForUser(getContentResolver(),
+        int day = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.DISPLAY_TEMPERATURE_DAY,
                 mDefaultDayTemperature,
                 UserHandle.USER_CURRENT);
-        float night = Settings.System.getFloatForUser(getContentResolver(),
+        int night = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.DISPLAY_TEMPERATURE_NIGHT,
                 mDefaultNightTemperature,
                 UserHandle.USER_CURRENT);
