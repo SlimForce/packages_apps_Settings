@@ -207,7 +207,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 counter++;
         } else {
             mWakeUpWhenPluggedOrUnplugged.setChecked(Settings.System.getInt(resolver,
-                        Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED, 1) == 1);
+                        Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED, 0) == 1);
             mWakeUpWhenPluggedOrUnplugged.setOnPreferenceChangeListener(this);
         }
 

@@ -21,7 +21,7 @@
         android:key="privacy_guard_default"
         android:title="@string/privacy_guard_default_title"
         android:summary="@string/privacy_guard_default_summary"
-        android:persistent="false" />
+        android:persistent="true" />
 
     <SwitchPreference
         android:key="privacy_guard_notification"

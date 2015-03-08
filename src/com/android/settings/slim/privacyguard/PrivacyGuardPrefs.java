@@ -55,23 +55,15 @@ public class PrivacyGuardPrefs extends SettingsPreferenceFragment implements
         mPrivacyGuardDefault = (SwitchPreference) findPreference(KEY_PRIVACY_GUARD_DEFAULT);
         mPrivacyGuardDefault.setOnPreferenceChangeListener(this);
 
-        try {
-            mPrivacyGuardDefault.setChecked(Settings.Secure.getInt(getContentResolver(),
-                    Settings.Secure.PRIVACY_GUARD_DEFAULT) == 1);
-        } catch (SettingNotFoundException e) {
-            mPrivacyGuardDefault.setChecked(false);
-        }
+        mPrivacyGuardDefault.setChecked(Settings.Secure.getInt(getContentResolver(),
+                    Settings.Secure.PRIVACY_GUARD_DEFAULT, 1) == 1);
 
         mPrivacyGuardNotification =
             (SwitchPreference) findPreference(KEY_PRIVACY_GUARD_NOTIFICATION);
         mPrivacyGuardNotification.setOnPreferenceChangeListener(this);
 
-        try {
-            mPrivacyGuardNotification.setChecked(Settings.Secure.getInt(getContentResolver(),
-                    Settings.Secure.PRIVACY_GUARD_NOTIFICATION) == 1);
-        } catch (SettingNotFoundException e) {
-            mPrivacyGuardNotification.setChecked(true);
-        }
+        mPrivacyGuardNotification.setChecked(Settings.Secure.getInt(getContentResolver(),
+                    Settings.Secure.PRIVACY_GUARD_NOTIFICATION, 1) == 1);
     }
 
     @Override

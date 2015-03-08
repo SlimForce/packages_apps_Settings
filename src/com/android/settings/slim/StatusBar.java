@@ -98,12 +98,12 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         
         mStatusBarNetworkStats = (SwitchPreference) prefSet.findPreference(STATUS_BAR_NETWORK_STATS);
         mStatusBarNetworkStats.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.STATUS_BAR_NETWORK_STATS, 0) == 1));
+                Settings.System.STATUS_BAR_NETWORK_STATS, 1) == 1));
         mStatusBarNetworkStats.setOnPreferenceChangeListener(this);
 
         mNetStatsArrow = (SwitchPreference) prefSet.findPreference(STATUS_BAR_NETWORK_STATS_SHOW_ARROW);
         mNetStatsArrow.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.STATUS_BAR_NETWORK_STATS_SHOW_ARROW, 1) == 1));
+                Settings.System.STATUS_BAR_NETWORK_STATS_SHOW_ARROW, 0) == 1));
         mNetStatsArrow.setOnPreferenceChangeListener(this);
 
         mStatusBarNetStatsUpdate = (ListPreference) prefSet.findPreference(STATUS_BAR_NETWORK_STATS_UPDATE);
