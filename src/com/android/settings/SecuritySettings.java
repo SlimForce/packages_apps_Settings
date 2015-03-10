@@ -436,7 +436,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
         mAdvancedReboot = (ListPreference) root.findPreference(KEY_ADVANCED_REBOOT);
         if (mIsPrimary) {
             mAdvancedReboot.setValue(String.valueOf(Settings.Secure.getInt(
-                    getContentResolver(), Settings.Secure.ADVANCED_REBOOT, 0)));
+                    getContentResolver(), Settings.Secure.ADVANCED_REBOOT, 1)));
             mAdvancedReboot.setSummary(mAdvancedReboot.getEntry());
             mAdvancedReboot.setOnPreferenceChangeListener(this);
         } else {
@@ -506,7 +506,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
 
     private boolean isNonMarketAppsAllowed() {
         return Settings.Global.getInt(getContentResolver(),
-                                      Settings.Global.INSTALL_NON_MARKET_APPS, 0) > 0;
+                                      Settings.Global.INSTALL_NON_MARKET_APPS, 1) > 0;
     }
 
     private void setNonMarketAppsAllowed(boolean enabled) {
