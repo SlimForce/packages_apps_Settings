@@ -1144,6 +1144,14 @@ public class SettingsActivity extends Activity
                     if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_WIFI)) {
                         removeTile = true;
                     }
+                } else if (id == R.id.mobile_networks) {
+                    if (TelephonyManager.getDefault().getPhoneCount() > 1) {
+                        removeTile = true;
+                    }
+                } else if (id == R.id.msim_mobile_networks) {
+                    if (TelephonyManager.getDefault().getPhoneCount() <= 1) {
+                        removeTile = true;
+                    }
                 } else if (id == R.id.bluetooth_settings) {
                     // Remove Bluetooth Settings if Bluetooth service is not available.
                     if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH)) {
