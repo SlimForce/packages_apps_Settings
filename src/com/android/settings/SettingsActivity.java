@@ -1212,37 +1212,6 @@ public class SettingsActivity extends Activity
                             UserManager.DISALLOW_DEBUGGING_FEATURES)) {
                         removeTile = true;
                     }
-                } else if (id == R.id.superuser) {
-                    String value = SystemProperties.get(
-                            DevelopmentSettings.ROOT_ACCESS_PROPERTY, "0");
-                    if (isSuperSUSupported() || Integer.valueOf(value) == 0 || um.hasUserRestriction(
-                            UserManager.DISALLOW_DEBUGGING_FEATURES)) {
-                        removeTile = true;
-                    }
-                } else if (id == R.id.supersu_settings) {
-                    if (!isSuperSUSupported()) {
-                        removeTile = true;
-                    }
-                 } else if (id == R.id.viper_settings) {
-                    // Embedding into Settings only if app exists (user could manually remove it)
-                    boolean supported = false;
-                    try {
-                        supported = (getPackageManager().getPackageInfo("com.vipercn.viper4android_v2", 0).versionCode >= 18);
-                    } catch (PackageManager.NameNotFoundException e) {
- 
-                    }
-                    if (!supported) {
-                        removeTile = true;
-                    }
-                } else if (id == R.id.bitsyko_layers) {
-                    boolean supported = false;
-                    try {
-                        supported = (getPackageManager().getPackageInfo("com.lovejoy777.rroandlayersmanager", 0).versionCode > 0);
-                    } catch (PackageManager.NameNotFoundException e) {
-                    }
-                    if (!supported) {
-                        removeTile = true;
-                    }
                 } else if (id == R.id.screen_off_gesture_settings) {
                     boolean supported = false;
                     try {
@@ -1274,16 +1243,6 @@ public class SettingsActivity extends Activity
                 n--;
             }
         }
-    }
-
-    private boolean isSuperSUSupported() {
-        // Embedding into Settings is supported from SuperSU v1.85 and up
-        boolean supported = false;
-        try {
-           supported = (getPackageManager().getPackageInfo("eu.chainfire.supersu", 0).versionCode >= 185);
-        } catch (PackageManager.NameNotFoundException e) {
-        }
-        return supported;
     }
 
     private boolean updateHomeSettingTiles(DashboardTile tile) {
