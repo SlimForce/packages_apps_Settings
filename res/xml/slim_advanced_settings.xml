@@ -45,7 +45,6 @@
         android:key="tweak_category"
         android:title="@string/tweak_category_title">
 
-<!--
         <PreferenceScreen
             android:key="key_kernel_adiutor"
             android:title="@string/kernel_adiutor_title"
@@ -55,7 +54,6 @@
                 android:targetPackage="com.grarak.kerneladiutor"
                 android:targetClass="com.grarak.kerneladiutor.MainActivity" />
         </PreferenceScreen>
--->
 
         <PreferenceScreen
             android:key="key_viper4android"
