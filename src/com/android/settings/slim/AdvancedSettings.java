@@ -90,12 +90,19 @@ public class AdvancedSettings extends SettingsPreferenceFragment {
 
         // Root category
         PreferenceCategory rootCat = (PreferenceCategory) findPreference(CATEGORY_ROOT);
-        PreferenceScreen superuser = (PreferenceScreen) findPreference(KEY_SUPERUSER);
-        PreferenceScreen supersu = (PreferenceScreen) findPreference(KEY_SUPERSU);
-        if (isSuperSUSupported()) {
-            rootCat.removePreference(superuser);
+        String value = SystemProperties.get(DevelopmentSettings.ROOT_ACCESS_PROPERTY, "0");
+        final UserManager um = (UserManager) getSystemService(Context.USER_SERVICE);
+        boolean isSuperSUSupported = isSuperSUSupported();
+        if (!isSuperSUSupported && (Integer.valueOf(value) == 0 || um.hasUserRestriction(UserManager.DISALLOW_DEBUGGING_FEATURES))) {
+            getPreferenceScreen().removePreference(rootCat);
         } else {
-            rootCat.removePreference(supersu);
+            PreferenceScreen superuser = (PreferenceScreen) findPreference(KEY_SUPERUSER);
+            PreferenceScreen supersu = (PreferenceScreen) findPreference(KEY_SUPERSU);
+            if (isSuperSUSupported) {
+                rootCat.removePreference(superuser);
+            } else {
+                rootCat.removePreference(supersu);
+            }
         }
     }
 
@@ -104,7 +111,7 @@ public class AdvancedSettings extends SettingsPreferenceFragment {
         if (preference.getKey().equals(KEY_BUGREPORT)) {
             if (mBugReportTask == null || mBugReportTask.getStatus() != AsyncTask.Status.RUNNING) {
                 mBugReportTask = new BugReport();
-                mBugReportTask.execute(getActivity());
+                mBugReportTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, getActivity());
             }
             return true;
         }
