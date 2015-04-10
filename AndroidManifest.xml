@@ -71,9 +71,6 @@
     <uses-permission android:name="android.permission.OEM_UNLOCK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
-    <!-- Heads up -->
-    <uses-permission android:name="android.permission.CHANGE_HEADS_UP_STATE" />
-
     <permission
         android:name="android.permission.REQUEST_SUPERUSER"
         android:protectionLevel="signature" />
@@ -2217,6 +2214,9 @@
                 <action android:name="android.content.action.SEARCH_INDEXABLES_PROVIDER" />
             </intent-filter>
         </provider>
+
+        <!-- Heads Up -->
+        <activity android:name=".headsup.HeadsUpSettings" />
 
     </application>
 </manifest>
