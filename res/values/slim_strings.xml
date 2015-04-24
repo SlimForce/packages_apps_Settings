@@ -50,6 +50,7 @@
     <string name="tweak_category_title">Tweak</string>
     <string name="root_category_title">Root</string>
     <string name="misc_category_title">Miscellaneous</string>
+    <string name="theme_category_title">Theme</string>
     <string name="kernel_adiutor_title">Kernel Adiutor</string>
     <string name="kernel_adiutor_summary">Tweak kernel parameters. Warning! This may cause instability!</string>
     <string name="viper4android_title">Viper4Android</string>
@@ -65,6 +66,8 @@
     <string name="changelog_title">Build changelog</string>
     <string name="changelog_summary">A full changelog of the current build</string>
     <string name="no_changelog_summary">No changelog</string>
+    <string name="layers_manager_title">Layers manager</string>
+    <string name="layers_manager_summary">An easy way to manage layers</string>
 
     <!-- About phone screen, Slim version -->
     <string name="slim_version_title">Slim version</string>
@@ -890,6 +893,7 @@
     <string name="qs_tile_visualizer">AudioFX</string>
     <string name="qs_tile_reboot">Reboot</string>
     <string name="qs_tile_slimaction">SlimAction</string>
+    <string name="qs_tile_sync">Sync</string>
 
     <string name="qs_main_tiles_title">Enlarge first row</string>
     <string name="qs_main_tiles_summary_on">Two main tiles on the first row</string>
@@ -905,6 +909,8 @@
 
     <string name="qs_category_general_title">General</string>
     <string name="qs_category_tiles_title">Tiles</string>
+
+    <string name="qs_four_columns_title">Show four tiles per row</string>
     
     <!-- WiFi Ad-Hoc mode -->
     <string name="wifi_mode">Mode</string>
@@ -936,9 +942,6 @@
     <string name="expanded_desktop_state">Expanded state</string>
     <string name="expanded_enabled_for_all">Enabled for all</string>
     <string name="expanded_user_configurable">User configurable</string>
-
-    <!-- BitSyko Layers -->
-    <string name="bitsyko_layers_str">Layers</string>
 
     <!-- Navigation settings -->
     <string name="navigation_settings_options_title">Navigation options</string>
