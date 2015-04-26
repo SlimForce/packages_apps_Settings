@@ -82,6 +82,16 @@ public class AdvancedSettings extends SettingsPreferenceFragment {
             tweakCat.removePreference(viper4android);
         }
 
+        PreferenceScreen layersmanager = (PreferenceScreen) findPreference(KEY_LAYERS_MANAGER);
+        supported = false;
+        try {
+            supported = (getActivity().getPackageManager().getPackageInfo("com.lovejoy777.rroandlayersmanager", 0).versionCode >= 0);
+        } catch (PackageManager.NameNotFoundException e) {
+        }
+        if (!supported) {
+            tweakCat.removePreference(layersmanager);
+        }
+		
         PreferenceScreen maxxaudiofx = (PreferenceScreen) findPreference(KEY_MAXXAUDIOFX);
         try {
             getActivity().getPackageManager().getPackageInfo("com.cyngn.maxxaudio", 0);
