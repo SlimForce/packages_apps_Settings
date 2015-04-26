@@ -68,6 +68,8 @@
     <string name="no_changelog_summary">No changelog</string>
     <string name="layers_manager_title">Layers manager</string>
     <string name="layers_manager_summary">An easy way to manage layers</string>
+    <string name="layers_backup_title">Layers backup</string>
+    <string name="layers_backup_summary">Create backup script for layers to survive a dirty flash</string>
 
     <!-- About phone screen, Slim version -->
     <string name="slim_version_title">Slim version</string>
@@ -81,6 +83,10 @@
     <!-- About device screen, CPU and RAM info. -->
     <string name="cpu_info">CPU</string>
     <string name="mem_info">Memory</string>
+    <!-- About phone screen, Device model -->
+    <string name="device_model">Device model</string>
+    <!-- About phone screen, Device nodel -->
+    <string name="device_name">Device name</string>
 
     <!-- Setting checkbox title for root access -->
     <string name="root_access">Root access</string>
